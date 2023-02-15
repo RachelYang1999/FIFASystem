@@ -1,1 +1,129 @@
-<h1>welcome</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>World Cup Admin Panel</title>
+    <link rel="stylesheet" href="admin-page.css">
+    <!-- <script defer src="./scripts/admin-login.js"></script> -->
+</head>
+<body>
+    <header>
+        <h1>World Cup Admin Panel</h1>
+	</header>
+
+	<h2>Tournaments</h2>
+	<table>
+		<tr>
+			<th>Tournament Name</th>
+			<th>Start Date</th>
+			<th>End Date</th>
+			<th>Winner</th>
+            <th>Participated Teams</th>
+			<th>Actions</th>
+		</tr>
+		<!-- Display all existing tournaments and their data -->
+		<tr>
+			<td>World Cup 2018</td>
+			<td>14 June 2018</td>
+			<td>15 July 2018</td>
+			<td>France</td>
+            <td>France, Germany, Brazil...</td>
+			<td>
+				<button>Edit</button>
+				<button>Delete</button>
+			</td>
+		</tr>
+		<tr>
+			<td>World Cup 2014</td>
+			<td>12 June 2014</td>
+			<td>13 July 2014</td>
+			<td>Germany</td>
+            <td>France, Germany, Brazil...</td>
+			<td>
+				<button>Edit</button>
+				<button>Delete</button>
+			</td>
+		</tr>
+		<!-- Add new tournament -->
+		<tr>
+			<td><input type="text" name="new-tournament-name"></td>
+			<td><input type="date" name="new-tournament-start-date"></td>
+			<td><input type="date" name="new-tournament-end-date"></td>
+			<td><input type="text" name="new-tournament-winner"></td>
+            <td><input type="text" name="new-tournament-team"></td>
+			<td>
+				<button>Add</button>
+			</td>
+		</tr>
+	</table>
+
+	<h2>Teams</h2>
+	<table>
+		<tr>
+			<th>Team Name</th>
+            <th>Nation</th>
+            <th>Team Members</th>
+            <th>Tournaments</th>
+			<th>Actions</th>
+		</tr>
+		<!-- Display all existing teams and their data -->
+		<tr>
+			<td>Brazil</td>
+            <td>Brazil</td>
+            <td>Alisson · Ederson · Weverton...</td>
+            <td>World Cup 2014, World Cup 2018</td>
+			<td>
+				<button>Edit</button>
+				<button>Delete</button>
+			</td>
+		</tr>
+		<tr>
+			<td>Germany</td>
+            <td>Germany</td>
+            <td>Jamal Musiala · Thomas Muller...</td>
+            <td>World Cup 2014, World Cup 2018</td>
+			<td>
+				<button>Edit</button>
+				<button>Delete</button>
+			</td>
+		</tr>
+		<!-- Add new team -->
+		<tr>
+			<td><input type="text" name="new-team-name"></td>
+            <td><input type="text" name="new-team-nation"></td>
+            <td><input type="text" name="new-team-member"></td>
+            <td><input type="text" name="new-team-tournament"></td>
+			<td>
+				<button>Add</button>
+			</td>
+		</tr>
+	</table>
+
+
+    <h2>Announcements</h2>
+    <button class="btn" onclick="openAnnouncementModal()">Post Announcement</button>
+
+	<footer>
+		<p>&copy; FIFA - 2023 World Cup Management</p>
+	</footer>
+
+    <!-- Announcement Modal -->
+    <div id="announcement-modal" class="modal">
+        <div class="modal-content">
+        <span class="close" onclick="closeAnnouncementModal()">&times;</span>
+        <h2>Create a New Announcement</h2>
+        <form>
+            <label for="announcement-title">Title:</label>
+            <input type="text" id="announcement-title" name="announcement-title">
+            <label for="announcement-content">Content:</label>
+            <textarea id="announcement-content" name="announcement-content"></textarea>
+            <button type="submit" class="btn">Create Announcement</button>
+        </form>
+        </div>
+    </div>
+    <script src="./scripts/admin-page.js"></script>
+</body>
+</html>
