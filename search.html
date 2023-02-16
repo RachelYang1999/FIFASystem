@@ -5,17 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>World Cup 2022</title>
-    <meta name="title" content="Calendário de Jogos - Copa 2022" />
+    <title>Final - Calendário de Jogos - Copa 2022</title>
+    <meta name="title" content="Final - Calendário de Jogos - Copa 2022" />
     <meta
       name="description"
-      content="Fique por dentro dos jogos da Copa do Mundo 2022! Aqui você pode conferir os horários e o placar de todos os jogos e compartilhar com os amigos!"
+      content="Fique por dentro do jogo da Final da Copa do Mundo 2022! Aqui você pode conferir o horário e o placar do jogo e compartilhar com os amigos!"
     />
-
-    <!-- <meta
-      http-equiv="refresh"
-      content="0; URL='https://calendariodacopa.tk/final'"
-    /> -->
 
     <!-- links (css, fontes) -->
     <link rel="stylesheet" href="./style.css" />
@@ -37,8 +32,13 @@
       href="./assets/favicons/favicon-16x16.png"
     />
     <link rel="manifest" href="./assets/favicons/site.webmanifest" />
-    <meta name="msapplication-TileColor" content="#b91d47" />
-    <meta name="theme-color" content="#ffffff" />
+    <link
+      rel="mask-icon"
+      href="./assets/favicons/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#333333" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -59,26 +59,37 @@
         />
       </header>
       <div class="fases">
-        <button class="botao-selecionado">Group Stage</button>
-        <a href="oitavas.html">
-          <button class="botoes-fases">Round of 16</button>
-        </a>
-        <a href="quartas.html"
-          ><button class="botoes-fases">Quarterfinals</button></a
+        <a href="fase-de-grupos.html"
+          ><button class="botoes-fases">Fase de Grupos</button></a
         >
-        <a href="semi.html"><button class="botoes-fases">Semifinals</button></a>
+        <a href="oitavas.html"
+          ><button class="botoes-fases">Oitavas de Final</button></a
+        >
+        <a href="quartas.html"
+          ><button class="botoes-fases">Quartas de Final</button></a
+        >
+        <a href="semi.html"><button class="botoes-fases">Semifinais</button></a>
         <a href="final.html"><button class="botoes-fases">Final</button></a>
-        <a href="oitavas.html">
-          <button class="botoes-fases">Round of 16</button>
-        </a>
+        <button class="botao-selecionado">Search</button>
       </div>
       <main id="cards"></main>
+      <div class="searchbar">
 
+          <input type="text" placeholder="Search.." name="team1">
+          <input type="text" placeholder="Search.." name="team2">
+          <a href="result.html"><button>Search</button></a>
+
+      </div>
     </div>
-    <script src="./scripts/main.js"></script>
+    <script src="./scripts/final.js"></script>
     <script defer src="/_vercel/insights/script.js"></script>
     <footer>
-      <p>&copy; FIFA - 2023 World Cup Management By Group 4</p>
+      <p>
+        Desenvolvido por
+        <a href="https://github.com/gabrielovski" target="_blank">Gabriel</a>
+        durante o evento NLW Copa da
+        <a href="http://rocketseat.com.br" target="_blank">Rocketseat</a>!
+      </p>
     </footer>
   </body>
 </html>
