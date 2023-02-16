@@ -1,6 +1,14 @@
 function createGame(player1, hour, player2) {
   let player1alt = player1.slice(-1) === "a" ? "da" : "do"
   let player2alt = player2.slice(-1) === "a" ? "da" : "do"
+  console.log(player1)
+  console.log(player1.toLowerCase() == "china")
+
+  if (player1.toLowerCase() == "china" || player2.toLowerCase() == "china") {
+    return `
+    <h2 class="titlee">Match Not Found</h2>
+  `
+  }
   return `
     <li>
       <div class="jogo">
@@ -28,7 +36,9 @@ function createCard(date, day, games, finished) {
       <ul>
         ${games}
       </ul>
+      
     </div>
+    
   `
 }
 
@@ -47,5 +57,5 @@ document.querySelector("#cards").innerHTML =
     "18/12",
     "Sunday",
     createGame(team1, ""+getRandomInt(5)+" x "+getRandomInt(5), team2),
-    "encerrado"
+    "result"
   )
