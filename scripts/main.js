@@ -35,114 +35,114 @@ function createCard(date, day, games, finished) {
 document.querySelector("#cards").innerHTML =
   createCard(
     "20/11",
-    "domingo",
-    createGame("catar", "0 x 2", "equador"),
-    "encerrado"
+    "SUNDAY",
+    createGame("Qatar", "0 x 2", "equador"),
+    "result"
   ) +
   createCard(
     "21/11",
-    "segunda",
-    createGame("inglaterra", "6 x 2", "irã") +
-      createGame("senegal", "0 x 2", "holanda") +
-      createGame("estados unidos", "1 x 1", "país de gales"),
-    "encerrados"
+    "monday",
+    createGame("England", "6 x 2", "Iran") +
+      createGame("senegal", "0 x 2", "Netherlands") +
+      createGame("USA", "1 x 1", "Wales"),
+    "results"
   ) +
   createCard(
     "22/11",
-    "terça",
-    createGame("argentina", "1 x 2", "arábia saudita") +
-      createGame("dinamarca", "0 x 0", "tunísia") +
-      createGame("méxico", "0 x 0", "polônia") +
-      createGame("frança", "4 x 1", "austrália"),
-    "encerrados"
+    "tuesday",
+    createGame("argentina", "1 x 2", "Saudi Arabia") +
+      createGame("Denmark", "0 x 0", "Tunisia") +
+      createGame("Mexico", "0 x 0", "Poland") +
+      createGame("France", "4 x 1", "australia"),
+    "results"
   ) +
   createCard(
     "23/11",
-    "quarta",
-    createGame("marrocos", "0 x 0", "croácia") +
-      createGame("alemanha", "1 x 2", "japão") +
-      createGame("espanha", "7 x 0", "costa rica") +
-      createGame("bélgica", "1 x 0", "canadá"),
-    "encerrados"
+    "wednesday",
+    createGame("Marroco", "0 x 0", "Croatia") +
+      createGame("alemanha", "1 x 2", "Japan") +
+      createGame("Spain", "7 x 0", "costa rica") +
+      createGame("bélgica", "1 x 0", "Canada"),
+    "results"
   ) +
   createCard(
     "24/11",
-    "quinta",
-    createGame("suíça", "1 x 0", "camarões") +
-      createGame("uruguai", "0 x 0", "coreia do sul") +
+    "thursday",
+    createGame("Switzerland", "1 x 0", "Cameroon") +
+      createGame("uruguai", "0 x 0", "South Korea") +
       createGame("portugal", "3 x 2", "gana") +
-      createGame("brasil", "2 x 0", "sérvia"),
-    "encerrados"
+      createGame("Brazil", "2 x 0", "Serbia"),
+    "results"
   ) +
   createCard(
     "25/11",
-    "sexta",
-    createGame("país de gales", "0 x 2", "irã") +
-      createGame("catar", "1 x 3", "senegal") +
-      createGame("holanda", "1 x 1", "equador") +
-      createGame("inglaterra", "0 x 0", "estados unidos"),
-    "encerrados"
+    "friday",
+    createGame("Wales", "0 x 2", "Iran") +
+      createGame("Qatar", "1 x 3", "senegal") +
+      createGame("Netherlands", "1 x 1", "equador") +
+      createGame("England", "0 x 0", "USA"),
+    "results"
   ) +
   createCard(
     "26/11",
-    "sábado",
-    createGame("tunísia", "0 x 1", "austrália") +
-      createGame("polônia", "2 x 0", "arábia saudita") +
-      createGame("frança", "2 x 1", "dinamarca") +
-      createGame("argentina", "2 x 0", "méxico"),
-    "encerrados"
+    "Saturday",
+    createGame("Tunisia", "0 x 1", "australia") +
+      createGame("Poland", "2 x 0", "Saudi Arabia") +
+      createGame("France", "2 x 1", "Denmark") +
+      createGame("argentina", "2 x 0", "Mexico"),
+    "results"
   ) +
   createCard(
     "27/11",
-    "domingo",
-    createGame("japão", "0 x 1", "costa rica") +
-      createGame("bélgica", "0 x 2", "marrocos") +
-      createGame("croácia", "4 x 1", "canadá") +
-      createGame("espanha", "1 x 1", "alemanha"),
-    "encerrados"
+    "SUNDAY",
+    createGame("Japan", "0 x 1", "costa rica") +
+      createGame("bélgica", "0 x 2", "Marroco") +
+      createGame("Croatia", "4 x 1", "Canada") +
+      createGame("Spain", "1 x 1", "alemanha"),
+    "results"
   ) +
   createCard(
     "28/11",
-    "segunda",
-    createGame("camarões", "3 x 3", "sérvia") +
-      createGame("coreia do sul", "2 x 3", "gana") +
-      createGame("brasil", "1 x 0", "suíça") +
+    "monday",
+    createGame("Cameroon", "3 x 3", "Serbia") +
+      createGame("South Korea", "2 x 3", "gana") +
+      createGame("Brazil", "1 x 0", "Switzerland") +
       createGame("portugal", "2 x 0", "uruguai"),
-    "encerrados"
+    "results"
   ) +
   createCard(
     "29/11",
-    "terça",
+    "tuesday",
     createGame("equador", "1 x 2", "senegal") +
-      createGame("holanda", "2 x 0", "catar") +
-      createGame("irã", "0 x 1", "estados unidos") +
-      createGame("país de gales", "0 x 3", "inglaterra"),
-    "encerrados"
+      createGame("Netherlands", "2 x 0", "Qatar") +
+      createGame("Iran", "0 x 1", "USA") +
+      createGame("Wales", "0 x 3", "England"),
+    "results"
   ) +
   createCard(
     "30/11",
-    "quarta",
-    createGame("tunísia", "1 x 0", "frança") +
-      createGame("austrália", "1 x 0", "dinamarca") +
-      createGame("arábia saudita", "1 x 2", "méxico") +
-      createGame("polônia", "0 x 2", "argentina"),
-    "encerrados"
+    "wednesday",
+    createGame("Tunisia", "1 x 0", "France") +
+      createGame("australia", "1 x 0", "Denmark") +
+      createGame("Saudi Arabia", "1 x 2", "Mexico") +
+      createGame("Poland", "0 x 2", "argentina"),
+    "results"
   ) +
   createCard(
     "01/12",
-    "quinta",
-    createGame("croácia", "0 x 0", "bélgica") +
-      createGame("canadá", "1 x 2", "marrocos") +
+    "thursday",
+    createGame("Croatia", "0 x 0", "bélgica") +
+      createGame("Canada", "1 x 2", "Marroco") +
       createGame("costa rica", "2 x 4", "alemanha") +
-      createGame("japão", "2 x 1", "espanha"),
-    "encerrados"
+      createGame("Japan", "2 x 1", "Spain"),
+    "results"
   ) +
   createCard(
     "02/12",
-    "sexta",
-    createGame("coreia do sul", "2 x 1", "portugal") +
+    "friday",
+    createGame("South Korea", "2 x 1", "portugal") +
       createGame("gana", "0 x 2", "uruguai") +
-      createGame("sérvia", "2 x 3", "suíça") +
-      createGame("camarões", "1 x 0", "brasil"),
-    "encerrados"
+      createGame("Serbia", "2 x 3", "Switzerland") +
+      createGame("Cameroon", "1 x 0", "Brazil"),
+    "results"
   )

@@ -35,29 +35,29 @@ function createCard(date, day, games, finished) {
 document.querySelector("#cards").innerHTML =
   createCard(
     "03/12",
-    "sábado",
-    createGame("holanda", "3 x 1", "estados unidos") +
-      createGame("argentina", "2 x 1", "austrália"),
-    "encerrados"
+    "Saturday",
+    createGame("Netherlands", "3 x 1", "USA") +
+      createGame("argentina", "2 x 1", "australia"),
+    "results"
   ) +
   createCard(
     "04/12",
-    "domingo",
-    createGame("frança", "3 x 1", "polônia") +
-      createGame("inglaterra", "3 x 0", "senegal"),
-    "encerrados"
+    "SUNDAY",
+    createGame("France", "3 x 1", "Poland") +
+      createGame("England", "3 x 0", "senegal"),
+    "results"
   ) +
   createCard(
     "05/12",
-    "segunda",
-    createGame("japão", "1 <strong style='font-size: 20px'>(1 x 3)</strong> 1", "croácia") +
-      createGame("brasil", "4 x 1", "coreia do sul"),
-    "encerrados"
+    "monday",
+    createGame("Japan", "1 <strong style='font-size: 20px'>(1 x 3)</strong> 1", "Croatia") +
+      createGame("Brazil", "4 x 1", "South Korea"),
+    "results"
   ) +
   createCard(
     "06/12",
-    "terça",
-    createGame("marrocos", "0 <strong style='font-size: 20px'>(3 x 0)</strong> 0", "espanha") +
-      createGame("portugal", "6 x 1", "suíça"),
-    "encerrados"
+    "tuesday",
+    createGame("Marroco", "0 <strong style='font-size: 20px'>(3 x 0)</strong> 0", "Spain") +
+      createGame("portugal", "6 x 1", "Switzerland"),
+    "results"
   )
