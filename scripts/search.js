@@ -32,16 +32,20 @@ function createCard(date, day, games, finished) {
   `
 }
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const team1 = urlParams.get('team1')
+const team2 = urlParams.get('team2')
+
 document.querySelector("#cards").innerHTML =
   createCard(
-    "13/12",
-    "terça",
-    createGame("argentina", "3 x 0", "croácia"),
-    "encerrado"
-  ) +
-  createCard(
-    "14/12",
-    "quarta",
-    createGame("frança", "2 x 0", "marrocos"),
+    "18/12",
+    "Sunday",
+    createGame(team1, ""+getRandomInt(5)+" x "+getRandomInt(5), team2),
     "encerrado"
   )

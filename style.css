@@ -65,6 +65,18 @@ header {
   gap: 10px;
 }
 
+.searchbar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  animation: apeear 1.6s forwards;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+}
+
 .botoes-fases {
   height: 35px;
   width: 120px;
@@ -260,6 +272,12 @@ footer {
   }
 
   .fases {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .searchbar {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 15px;

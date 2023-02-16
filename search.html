@@ -1,93 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Final - Calendário de Jogos - Copa 2022</title>
-    <meta name="title" content="Final - Calendário de Jogos - Copa 2022" />
-    <meta
-      name="description"
-      content="Fique por dentro do jogo da Final da Copa do Mundo 2022! Aqui você pode conferir o horário e o placar do jogo e compartilhar com os amigos!"
-    />
+  <title>Final - Calendário de Jogos - Copa 2022</title>
+  <meta name="title" content="Final - Calendário de Jogos - Copa 2022" />
+  <meta
+          name="description"
+          content="Fique por dentro do jogo da Final da Copa do Mundo 2022! Aqui você pode conferir o horário e o placar do jogo e compartilhar com os amigos!"
+  />
 
-    <!-- links (css, fontes) -->
-    <link rel="stylesheet" href="./style.css" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./assets/favicons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/favicons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./assets/favicons/favicon-16x16.png"
-    />
-    <link rel="manifest" href="./assets/favicons/site.webmanifest" />
-    <link
-      rel="mask-icon"
-      href="./assets/favicons/safari-pinned-tab.svg"
-      color="#5bbad5"
-    />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#333333" />
+  <!-- links (css, fontes) -->
+  <link rel="stylesheet" href="./style.css" />
+  <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="./assets/favicons/apple-touch-icon.png"
+  />
+  <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="./assets/favicons/favicon-32x32.png"
+  />
+  <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="./assets/favicons/favicon-16x16.png"
+  />
+  <link rel="manifest" href="./assets/favicons/site.webmanifest" />
+  <link
+          rel="mask-icon"
+          href="./assets/favicons/safari-pinned-tab.svg"
+          color="#5bbad5"
+  />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#333333" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap"
-      rel="stylesheet"
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap"
+          rel="stylesheet"
+  />
+</head>
+
+<!-- body -->
+<body class="green">
+<div id="app">
+  <header>
+    <img
+            src="./assets/copalogo.svg"
+            alt="Logo da Copa do Mundo 2022"
+            class="logo-copa"
     />
-  </head>
+  </header>
+  <div class="fases">
+    <a href="current.html">
+      <button class="botoes-fases">Current</button>
+    </a>
+    <a href="fase-de-grupos.html"
+    ><button class="botoes-fases">Group Stage</button></a
+    >
+    <a href="oitavas.html"
+    ><button class="botoes-fases">Round of 16</button></a
+    >
+    <a href="quartas.html"
+    ><button class="botoes-fases">Quarterfinals</button></a
+    >
+    <a href="semi.html"><button class="botoes-fases">Semifinals</button></a>
+    <a href="final.html"><button class="botoes-fases">Final</button></a>
+    <button class="botao-selecionado">Search</button>
 
-  <!-- body -->
-  <body class="green">
-    <div id="app">
-      <header>
-        <img
-          src="./assets/copalogo.svg"
-          alt="Logo da Copa do Mundo 2022"
-          class="logo-copa"
-        />
-      </header>
-      <div class="fases">
-        <a href="current.html"
-          ><button class="botao-selecionado">Current</button></a
-        >
-        <a href="fase-de-grupos.html"
-          ><button class="botoes-fases">Group Stage</button></a
-        >
-        <a href="oitavas.html"
-          ><button class="botoes-fases">Round of 16</button></a
-        >
-        <a href="quartas.html"
-          ><button class="botoes-fases">Quarterfinals</button></a
-        >
-        <a href="semi.html"><button class="botoes-fases">Semifinals</button></a>
-        <a href="final.html"><button class="botoes-fases">Final</button></a>
-        <button class="botao-selecionado">Search</button>
-      </div>
-      <main id="cards"></main>
-      <div class="searchbar">
+  </div>
 
-          <input type="text" placeholder="Search.." name="team1">
-          <input type="text" placeholder="Search.." name="team2">
-          <a href="result.html"><button>Search</button></a>
+  <main id="cards"></main>
 
-      </div>
-    </div>
-    <script src="./scripts/final.js"></script>
-    <script defer src="/_vercel/insights/script.js"></script>
-    <footer>
-      <p>&copy; FIFA - 2023 World Cup Management By Group 4</p>
-    </footer>
-  </body>
+  <div class="searchbar">
+    <form>
+      <input type="text" placeholder="team1..." name="team1" id="team1">
+      <input type="text" placeholder="team2..." name="team2" id="team2">
+      <a href="search.html"><button type = "submit">Search</button></a>
+    </form>
+  </div>
+</div>
+<script src="./scripts/search.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
+<footer>
+  <p>&copy; FIFA - 2023 World Cup Management By Group 4</p>
+</footer>
+</body>
 </html>
