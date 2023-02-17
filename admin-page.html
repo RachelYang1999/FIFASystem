@@ -15,7 +15,7 @@
 	</header>
 
 	<h2>Tournaments</h2>
-	<table>
+	<table id="tournament-table">
 		<tr>
 			<th>Tournament Name</th>
 			<th>Start Date</th>
@@ -33,7 +33,7 @@
             <td>France, Germany, Brazil...</td>
 			<td>
 				<button>Edit</button>
-				<button>Delete</button>
+				<button class="delete" onclick="delete_tournamant_row('1')">Delete</button>
 			</td>
 		</tr>
 		<tr>
@@ -44,7 +44,7 @@
             <td>France, Germany, Brazil...</td>
 			<td>
 				<button>Edit</button>
-				<button>Delete</button>
+				<button class="delete" onclick="delete_tournamant_row('2')">Delete</button>
 			</td>
 		</tr>
 		<!-- Add new tournament -->
@@ -55,7 +55,11 @@
 			<td><input type="text" name="new-tournament-winner"></td>
             <td><input type="text" name="new-tournament-team"></td>
 			<td>
-				<button>Add</button>
+				<button class="add" onclick="add_Row();" value="
+				Add Row">Add</button>
+				<div id="error-msg-holder">
+					<p id="error-msg">Incomplete Data</p>
+				</div>
 			</td>
 		</tr>
 	</table>
@@ -101,6 +105,9 @@
 			<td>
 				<button class="add" onclick="add_Row();" value="
 				Add Row">Add</button>
+				<div id="error-msg-holder">
+					<p id="error-msg">Incomplete Data</p>
+				</div>
 			</td>
 		</tr>
 	</table>

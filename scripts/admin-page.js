@@ -24,6 +24,69 @@ window.onclick = function(event) {
   }
 }
 
+const errorMsg = document.getElementById("error-msg");
+function add_TRow()
+{
+  console.log('add row');
+ var new_name=document.getElementById("new-tournament-name").value;
+ var new_start_date=document.getElementById("new-tournament-start-date").value;
+ var new_end_date=document.getElementById("new-tournament-end-date").value;
+ var new_winner=document.getElementById("new-tournament-winner").value;
+ var new_team=document.getElementById("new-tournament-team").value;
+
+ if(new_name && new_start_date && new_end_date && new_winner && new_team){
+    var table=document.getElementById("tdata_table");
+    var table_len=(table.rows.length)-1;
+    var Edit='Edit'
+    var table = document.getElementById("tournament-table");
+
+    var newRow = document.createElement("tr");
+    var tournamentName = document.createElement("td");
+    tournamentName.textContent = new_name;
+    newRow.appendChild(tournamentName);
+
+    var startDate = document.createElement("td");
+    startDate.textContent = new_start_date;
+    newRow.appendChild(startDate);
+
+    var endDate = document.createElement("td");
+    endDate.textContent = new_end_date;
+    newRow.appendChild(endDate);
+
+    var winner = document.createElement("td");
+    winner.textContent = new_winner;
+    newRow.appendChild(winner);
+
+    var participants = document.createElement("td");
+    participants.textContent = new_team;
+    newRow.appendChild(participants);
+
+    var actions = document.createElement("td");
+    var editButton = document.createElement("button");
+    editButton.textContent = "Edit";
+    actions.appendChild(editButton);
+
+    var deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.setAttribute("class", "delete");
+    deleteButton.setAttribute("onclick", "delete_tournamant_row('"+table_len+"')");
+    actions.appendChild(deleteButton);
+
+    newRow.appendChild(actions);
+    table.appendChild(newRow);
+
+
+    document.getElementById("new-team-name").value="";
+    document.getElementById("new-tournament-start-date").value="";
+    document.getElementById("new-tournament-end-date").value="";
+    document.getElementById("new-tournament-winner").value="";
+    document.getElementById("new-tournament-team").value="";
+ }else{
+    errorMsg.style.opacity = 1;
+ }
+
+
+}
 
 function add_Row()
 {
@@ -33,16 +96,29 @@ function add_Row()
  var new_member=document.getElementById("new-team-member").value;
  var new_tournament=document.getElementById("new-team-tournament").value;
 
- var table=document.getElementById("data_table");
- var table_len=(table.rows.length)-1;
- var Edit='Edit'
- var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='name_row"+table_len+"'>"+new_name+"</td><td id='country_row"+table_len+"'>"+new_nation+"</td><td id='member_row"+table_len+"'>"+new_member+"</td><td id='tournament_row"+table_len+"'>"+new_tournament+"</td> <td><button class='edit' id='edit_button"+table_len+"' onclick='edit_row("+table_len+")'>"+Edit+"</button>  <button class='delete' id='delete_button"+table_len+"' onclick='delete_row("+table_len+")'>Delete</button>  </td></tr>";
+ if(new_name && new_nation && new_member && new_tournament){
+    var table=document.getElementById("data_table");
+    var table_len=(table.rows.length)-1;
+    var Edit='Edit'
+    var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='name_row"+table_len+"'>"+new_name+"</td><td id='country_row"+table_len+"'>"+new_nation+"</td><td id='member_row"+table_len+"'>"+new_member+"</td><td id='tournament_row"+table_len+"'>"+new_tournament+"</td> <td><button class='edit' id='edit_button"+table_len+"' onclick='edit_row("+table_len+")'>"+Edit+"</button>  <button class='delete' id='delete_button"+table_len+"' onclick='delete_row("+table_len+")'>Delete</button>  </td></tr>";
 
- document.getElementById("new-team-name").value="";
- document.getElementById("new-team-nation").value="";
- document.getElementById("new-team-member").value="";
- document.getElementById("new-team-tournament").value="";
+    document.getElementById("new-team-name").value="";
+    document.getElementById("new-team-nation").value="";
+    document.getElementById("new-team-member").value="";
+    document.getElementById("new-team-tournament").value="";
+ }else{
+    errorMsg.style.opacity = 1;
+ }
 
+
+}
+
+function delete_tournamant_row(index)
+{
+  var table = document.getElementById("tournament-table");
+  // var row = table.rows[index];
+  // Remove the row from the table
+  table.deleteRow(index);
 }
 
 function delete_row(no)
