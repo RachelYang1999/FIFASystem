@@ -105,7 +105,7 @@ body {
     cursor: pointer;
   }
 
-  #error-msg-holder {
+  #tournament-error-msg-holder {
     width: 100%;
     height: 100%;
     display: grid;
@@ -113,7 +113,7 @@ body {
     align-items: right;
   }
   
-  #error-msg {
+  #tournament-error-msg {
     width: 50%;
     text-align: center;
     margin: 0;
@@ -126,6 +126,27 @@ body {
     opacity: 0;
   }
   
+  #team-error-msg-holder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: right;
+    align-items: right;
+  }
+  
+  #team-error-msg {
+    width: 50%;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #8a0000;
+    border: 1px solid #8a0000;
+    background-color: #e58f8f;
+    opacity: 0;
+  }
+
   /* Announcement Modal */
 #announcement-modal {
     display: none; 

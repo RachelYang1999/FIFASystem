@@ -24,56 +24,42 @@ window.onclick = function(event) {
   }
 }
 
-const errorMsg = document.getElementById("error-msg");
+const tourErrorMsg = document.getElementById("tournament-error-msg");
+const teamErrorMsg = document.getElementById("team-error-msg");
+
 function add_TRow()
 {
-  console.log('add row');
- var new_name=document.getElementById("new-tournament-name").value;
- var new_start_date=document.getElementById("new-tournament-start-date").value;
- var new_end_date=document.getElementById("new-tournament-end-date").value;
- var new_winner=document.getElementById("new-tournament-winner").value;
- var new_team=document.getElementById("new-tournament-team").value;
+  var new_name=document.getElementById("new-tournament-name").value;
+  var new_start_date=document.getElementById("new-tournament-start-date").value;
+  var new_end_date=document.getElementById("new-tournament-end-date").value;
+  var new_winner=document.getElementById("new-tournament-winner").value;
+  var new_team=document.getElementById("new-tournament-team").value;
 
- if(new_name && new_start_date && new_end_date && new_winner && new_team){
-    var table=document.getElementById("tdata_table");
+  if(new_name && new_start_date && new_end_date && new_winner && new_team){
+    var table=document.getElementById("tournament-table");
     var table_len=(table.rows.length)-1;
     var Edit='Edit'
-    var table = document.getElementById("tournament-table");
 
-    var newRow = document.createElement("tr");
-    var tournamentName = document.createElement("td");
-    tournamentName.textContent = new_name;
-    newRow.appendChild(tournamentName);
+    // Insert a new row at the second last position
+    let row = table.insertRow(table_len);
+    
+    // Insert cells for each column
+    let cell1 = row.insertCell(0);
+    let cell2 = row.insertCell(1);
+    let cell3 = row.insertCell(2);
+    let cell4 = row.insertCell(3);
+    let cell5 = row.insertCell(4);
+    let cell6 = row.insertCell(5);
+    
+    // Set the cell values
+    cell1.innerHTML = new_name;
+    cell2.innerHTML = new_start_date;
+    cell3.innerHTML = new_end_date;
+    cell4.innerHTML = new_winner;
+    cell5.innerHTML = new_team;
+    cell6.innerHTML = '<button class="edit">Edit</button><button class="delete" onclick="delete_tournamant_row(' + table_len + ')">Delete</button>';
 
-    var startDate = document.createElement("td");
-    startDate.textContent = new_start_date;
-    newRow.appendChild(startDate);
-
-    var endDate = document.createElement("td");
-    endDate.textContent = new_end_date;
-    newRow.appendChild(endDate);
-
-    var winner = document.createElement("td");
-    winner.textContent = new_winner;
-    newRow.appendChild(winner);
-
-    var participants = document.createElement("td");
-    participants.textContent = new_team;
-    newRow.appendChild(participants);
-
-    var actions = document.createElement("td");
-    var editButton = document.createElement("button");
-    editButton.textContent = "Edit";
-    actions.appendChild(editButton);
-
-    var deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
-    deleteButton.setAttribute("class", "delete");
-    deleteButton.setAttribute("onclick", "delete_tournamant_row('"+table_len+"')");
-    actions.appendChild(deleteButton);
-
-    newRow.appendChild(actions);
-    table.appendChild(newRow);
+    // deleteButton.setAttribute("onclick", "delete_tournamant_row('"+table_len+"')");
 
 
     document.getElementById("new-team-name").value="";
@@ -81,9 +67,9 @@ function add_TRow()
     document.getElementById("new-tournament-end-date").value="";
     document.getElementById("new-tournament-winner").value="";
     document.getElementById("new-tournament-team").value="";
- }else{
-    errorMsg.style.opacity = 1;
- }
+  }else{
+    tourErrorMsg.style.opacity = 1;
+  }
 
 
 }
@@ -107,7 +93,7 @@ function add_Row()
     document.getElementById("new-team-member").value="";
     document.getElementById("new-team-tournament").value="";
  }else{
-    errorMsg.style.opacity = 1;
+    teamErrorMsg.style.opacity = 1;
  }
 
 

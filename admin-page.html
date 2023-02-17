@@ -49,16 +49,15 @@
 		</tr>
 		<!-- Add new tournament -->
 		<tr>
-			<td><input type="text" name="new-tournament-name"></td>
-			<td><input type="date" name="new-tournament-start-date"></td>
-			<td><input type="date" name="new-tournament-end-date"></td>
-			<td><input type="text" name="new-tournament-winner"></td>
-            <td><input type="text" name="new-tournament-team"></td>
+			<td><input type="text" id="new-tournament-name"></td>
+			<td><input type="date" id="new-tournament-start-date"></td>
+			<td><input type="date" id="new-tournament-end-date"></td>
+			<td><input type="text" id="new-tournament-winner"></td>
+            <td><input type="text" id="new-tournament-team"></td>
 			<td>
-				<button class="add" onclick="add_Row();" value="
-				Add Row">Add</button>
-				<div id="error-msg-holder">
-					<p id="error-msg">Incomplete Data</p>
+				<button class="add" onclick="add_TRow()">Add</button>
+				<div id="tournament-error-msg-holder">
+					<p id="tournament-error-msg">Incomplete Data</p>
 				</div>
 			</td>
 		</tr>
@@ -105,8 +104,8 @@
 			<td>
 				<button class="add" onclick="add_Row();" value="
 				Add Row">Add</button>
-				<div id="error-msg-holder">
-					<p id="error-msg">Incomplete Data</p>
+				<div id="team-error-msg-holder">
+					<p id="team-error-msg">Incomplete Data</p>
 				</div>
 			</td>
 		</tr>
