@@ -97,14 +97,14 @@ function add_Row() {
 
 function add_match_Row() {
   console.log("add match row");
-  var new_team1 = document.getElementById("new-team1-name").value;
-  var new_team1_score = document.getElementById("new-team1-score").value;
-  var new_team2 = document.getElementById("new-team2-name").value;
-  var new_team2_score = document.getElementById("new-team2-score").value;
-  var new_team_winner = document.getElementById("new-winner").value;
-  var new_date = document.getElementById("new-date").value;
-  var new_city = document.getElementById("new-city").value;
-  var new_ticket_sold = document.getElementById("new-ticket-sold").value;
+  var new_team1 = document.getElementById("new_team1_name").value;
+  var new_team1_score = document.getElementById("new_team1_score").value;
+  var new_team2 = document.getElementById("new_team2_name").value;
+  var new_team2_score = document.getElementById("new_team2_score").value;
+  var new_team_winner = document.getElementById("new_winner").value;
+  var new_date = document.getElementById("new_date").value;
+  var new_city = document.getElementById("new_city").value;
+  var new_ticket_sold = document.getElementById("new_ticket_sold").value;
 
   if (new_team1 && new_team1_score && new_team2 && new_team2_score && new_team_winner && new_date && new_city && new_ticket_sold) {
     var table = document.getElementById("match_table");
@@ -154,8 +154,6 @@ function add_match_Row() {
 
 function delete_tournamant_row(index) {
   var table = document.getElementById("tournament-table");
-  // var row = table.rows[index];
-  // Remove the row from the table
   table.deleteRow(index);
 }
 function delete_match_row(index) {
@@ -201,4 +199,66 @@ function save_row(no) {
 
   document.getElementById("edit_button" + no).style.display = "block";
   document.getElementById("save_button" + no).style.display = "none";
+}
+
+function edit_match_row(no) {
+  document.getElementById("edit_match_button" + no).style.display = "none";
+  document.getElementById("save_match_button" + no).style.display = "block";
+
+  var new_team1 = document.getElementById("team1_row" + no);
+  var new_team1_score = document.getElementById("score1_row"+ no);
+  var new_team2 = document.getElementById("team2_row"+ no);
+  var new_team2_score = document.getElementById("score2_row"+ no);
+  var new_team_winner = document.getElementById("winner_row"+ no);
+  var new_date = document.getElementById("date_row"+ no);
+  var new_city = document.getElementById("city_row"+ no);
+  var new_ticket_sold = document.getElementById("ticket_row"+ no);
+
+  var new_team1_data = new_team1.innerHTML;
+  var new_team1_score_data = new_team1_score.innerHTML;
+  var new_team2_data = new_team2.innerHTML;
+  var new_team2_score_data = new_team2_score.innerHTML;
+  // var new_team_winner_data = new_team_winner.innerHTML;
+  var new_date_data = new_date.innerHTML;
+  var new_city_data = new_city.innerHTML;
+  var new_ticket_sold_data = new_ticket_sold.innerHTML;
+
+
+  new_team1.innerHTML = "<input type='text' id='team1_name_text" + no + "' value='" + new_team1_data + "'>";
+  new_team1_score.innerHTML = "<input type='text' id='team1_score_text" + no + "' value='" + new_team1_score_data + "'>";
+  new_team2.innerHTML = "<input type='text' id='team2_name_text" + no + "' value='" + new_team2_data + "'>";
+  new_team2_score.innerHTML = "<input type='text' id='team2-score-text" + no + "' value='" + new_team2_score_data + "'>";
+
+  // new_team_winner.innerHTML = "<input type='text' id='winner_text" + no + "' value='" + new_team_winner_data + "'>";
+  new_date.innerHTML = "<input type='date' id='date_text" + no + "' value='" + new_date_data + "'>";
+  new_city.innerHTML = "<input type='text' id='city_text" + no + "' value='" + new_city_data + "'>";
+  new_ticket_sold.innerHTML = "<input type='text' id='ticket_text" + no + "' value='" + new_ticket_sold_data + "'>";
+
+}
+
+function save_match_row(no) {
+  console.log("saving match row")
+  var new_team1_val = document.getElementById("team1_name_text" + no).value;
+  var new_team1_score_val = document.getElementById("team1_score_text" + no).value;
+  var new_team2 = document.getElementById("team2_name_text" + no).value;
+  var new_team2_score = document.getElementById("team2-score-text" + no).value;
+  // var new_team_winner = document.getElementById("winner_text" + no).value;
+  var new_date = document.getElementById("date_text" + no).value;
+  var new_city = document.getElementById("city_text" + no).value;
+  var new_ticket_sold = document.getElementById("ticket_text" + no).value;
+
+  document.getElementById("team1_row" + no).innerHTML = new_team1_val;
+  document.getElementById("score1_row" + no).innerHTML = new_team1_score_val;
+  document.getElementById("team2_row" + no).innerHTML = new_team2;
+  document.getElementById("score2_row" + no).innerHTML = new_team2_score;
+  
+  // document.getElementById("winner_row" + no).innerHTML = new_team_winner;
+  document.getElementById("date_row" + no).innerHTML = new_date;
+  document.getElementById("city_row" + no).innerHTML = new_city;
+  document.getElementById("ticket_row" + no).innerHTML = new_ticket_sold;
+
+  // console.log(tournament_val);
+
+  document.getElementById("edit_match_button" + no).style.display = "block";
+  document.getElementById("save_match_button" + no).style.display = "none";
 }
