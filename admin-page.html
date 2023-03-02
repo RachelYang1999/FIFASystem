@@ -2,141 +2,217 @@
 <html lang="en">
 
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>World Cup Admin Panel</title>
+    <title>World Cup Admin Panel</title>
     <link rel="stylesheet" href="admin-page.css">
     <!-- <script defer src="./scripts/admin-login.js"></script> -->
 </head>
+
 <body>
     <header>
         <h1>World Cup Admin Panel</h1>
-	</header>
+    </header>
 
-	<h2>Tournaments</h2>
-	<table id="tournament-table">
-		<tr>
-			<th>Tournament Name</th>
-			<th>Start Date</th>
-			<th>End Date</th>
-			<th>Winner</th>
+    <h2>Tournaments</h2>
+    <table id="tournament-table">
+        <tr>
+            <th>Tournament Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Winner</th>
             <th>Participated Teams</th>
-			<th>Actions</th>
-		</tr>
-		<!-- Display all existing tournaments and their data -->
-		<tr>
-			<td>World Cup 2018</td>
-			<td>14 June 2018</td>
-			<td>15 July 2018</td>
-			<td>France</td>
+            <th>Actions</th>
+        </tr>
+        <!-- Display all existing tournaments and their data -->
+        <tr>
+            <td>World Cup 2018</td>
+            <td>14 June 2018</td>
+            <td>15 July 2018</td>
+            <td>France</td>
             <td>France, Germany, Brazil...</td>
-			<td>
-				<button>Edit</button>
-				<button class="delete" onclick="delete_tournamant_row('1')">Delete</button>
-			</td>
-		</tr>
-		<tr>
-			<td>World Cup 2014</td>
-			<td>12 June 2014</td>
-			<td>13 July 2014</td>
-			<td>Germany</td>
+            <td>
+                <button>Edit</button>
+                <button class="delete" onclick="delete_tournamant_row('1')">Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>World Cup 2014</td>
+            <td>12 June 2014</td>
+            <td>13 July 2014</td>
+            <td>Germany</td>
             <td>France, Germany, Brazil...</td>
-			<td>
-				<button>Edit</button>
-				<button class="delete" onclick="delete_tournamant_row('2')">Delete</button>
-			</td>
-		</tr>
-		<!-- Add new tournament -->
-		<tr>
-			<td><input type="text" id="new-tournament-name"></td>
-			<td><input type="date" id="new-tournament-start-date"></td>
-			<td><input type="date" id="new-tournament-end-date"></td>
-			<td><input type="text" id="new-tournament-winner"></td>
+            <td>
+                <button>Edit</button>
+                <button class="delete" onclick="delete_tournamant_row('2')">Delete</button>
+            </td>
+        </tr>
+        <!-- Add new tournament -->
+        <tr>
+            <td><input type="text" id="new-tournament-name"></td>
+            <td><input type="date" id="new-tournament-start-date"></td>
+            <td><input type="date" id="new-tournament-end-date"></td>
+            <td><input type="text" id="new-tournament-winner"></td>
             <td><input type="text" id="new-tournament-team"></td>
-			<td>
-				<button class="add" onclick="add_TRow()">Add</button>
-				<div id="tournament-error-msg-holder">
-					<p id="tournament-error-msg">Incomplete Data</p>
-				</div>
-			</td>
-		</tr>
-	</table>
+            <td>
+                <button class="add" onclick="add_TRow()">Add</button>
+                <div id="tournament-error-msg-holder">
+                    <p id="tournament-error-msg">Incomplete Data</p>
+                </div>
+            </td>
+        </tr>
+    </table>
 
-	<h2>Teams</h2>
-	<table id="data_table">
-		<tr>
-			<th>Team Name</th>
+    <h2>Teams</h2>
+    <table id="data_table">
+        <tr>
+            <th>Team Name</th>
             <th>Nation</th>
             <th>Team Members</th>
             <th>Tournaments</th>
-			<th>Actions</th>
-		</tr>
-		<!-- Display all existing teams and their data -->
-		<tr id="row1">
-			<td id="name_row1">Brazil</td>
+            <th>Actions</th>
+        </tr>
+        <!-- Display all existing teams and their data -->
+        <tr id="row1">
+            <td id="name_row1">Brazil</td>
             <td id="country_row1">Brazil</td>
             <td id="member_row1">Alisson · Ederson · Weverton...</td>
             <td id="tournament_row1">World Cup 2014, World Cup 2018</td>
-			<td>
-				<button class="edit" id="edit_button1"onclick="edit_row('1')"> Edit </button> 
-				<button class="save" id="save_button1" onclick="save_row('1')">Save</button>
-				<button class="delete" onclick="delete_row('1')">Delete</button>
-			</td>
-		</tr>
-		<tr id="row2">
-			<td id="name_row2">Germany</td>
+            <td>
+                <button class="edit" id="edit_button1" onclick="edit_row('1')"> Edit </button>
+                <button class="save" id="save_button1" onclick="save_row('1')">Save</button>
+                <button class="delete" onclick="delete_row('1')">Delete</button>
+            </td>
+        </tr>
+        <tr id="row2">
+            <td id="name_row2">Germany</td>
             <td id="country_row2">Germany</td>
             <td id="member_row2">Jamal Musiala · Thomas Muller...</td>
             <td id="tournament_row2">World Cup 2014, World Cup 2018</td>
-			<td>
-				<button class="edit" id="edit_button2"onclick="edit_row('2')"> Edit </button> 
-				<button class="save" id="save_button2" onclick="save_row('2')">Save</button>
-				<button class="delete" onclick="delete_row('2')">Delete</button>
-			</td>
-		</tr>
-		<!-- Add new team -->
-		<tr id="row3">
-			<td><input type="text" id="new-team-name"></td>
+            <td>
+                <button class="edit" id="edit_button2" onclick="edit_row('2')"> Edit </button>
+                <button class="save" id="save_button2" onclick="save_row('2')">Save</button>
+                <button class="delete" onclick="delete_row('2')">Delete</button>
+            </td>
+        </tr>
+        <!-- Add new team -->
+        <tr id="row3">
+            <td><input type="text" id="new-team-name"></td>
             <td><input type="text" id="new-team-nation"></td>
             <td><input type="text" id="new-team-member"></td>
             <td><input type="text" id="new-team-tournament"></td>
-			<td>
-				<button class="add" onclick="add_Row();" value="
-				Add Row">Add</button>
-				<div id="team-error-msg-holder">
-					<p id="team-error-msg">Incomplete Data</p>
-				</div>
-			</td>
-		</tr>
-	</table>
+            <td>
+                <button class="add" onclick="add_Row();" value="
+                Add Row">Add</button>
+                <div id="team-error-msg-holder">
+                    <p id="team-error-msg">Incomplete Data</p>
+                </div>
+            </td>
+        </tr>
+    </table>
 
-	<!-- Add new team -->
+    <h2>Matches</h2>
+    <table id="match_table">
+        <tr>
+            <th>Team 1 Name</th>
+            <th>Team 1 Score</th>
+            <th>Team 2 Name</th>
+            <th>Team 2 Score</th>
+            <th>Winner</th>
+            <th>Date</th>
+            <th>City</th>
+            <th>Ticket Sold</th>
+            <th>Actions</th>
 
-	</table>
+        </tr>
+        <!-- Display all existing teams and their data -->
+        <tr id="row1">
+            <td id="team1_row1">Brazil</td>
+            <td id="score_row1">10</td>
+            <td id="team2_row1">Germany</td>
+            <td id="score2_row1">10</td>
+            <td id="winner_row1">Germany</td>
+            <td id="date_row1">13 July 2014</td>
+            <td id="city_row1">Al Rayyan</td>
+            <td id="ticket_row1">200</td>
+
+            <td>
+                <button class="edit" id="edit_button1" onclick="edit_row('1')"> Edit </button>
+                <button class="save" id="save_button1" onclick="save_row('1')">Save</button>
+                <button class="delete" onclick="delete_match_row('1')">Delete</button>
+            </td>
+        </tr>
+
+        <tr id="row2">
+            <td id="team1_row2">Brazil</td>
+            <td id="score_row2">10</td>
+            <td id="team2_row2">Germany</td>
+            <td id="score2_row2">10</td>
+            <td id="winner_row2">Germany</td>
+            <td id="date_row2">13 July 2014</td>
+            <td id="city_row2">Al Rayyan</td>
+            <td id="ticket_row2">200</td>
+
+            <td>
+                <button class="edit" id="edit_button1" onclick="edit_row('2')"> Edit </button>
+                <button class="save" id="save_button1" onclick="save_row('2')">Save</button>
+                <button class="delete" onclick="delete_match_row('2')">Delete</button>
+            </td>
+        </tr>
+
+        <tr>
+            <!-- Add new matches -->
+        <tr id="row3">
+            <td><input type="text" id="new-team1-name"></td>
+            <td><input type="text" id="new-team1-score"></td>
+            <td><input type="text" id="new-team2-name"></td>
+            <td><input type="text" id="new-team2-score"></td>
+            <td><select id="new-winner">
+                    <option value=" Brazil">Brazil</option>
+                    <option value="Germany">Germany</option>"
+                </select>
+            </td>
+            <td><input type="date" id="new-date"></td>
+            <td><input type="text" id="new-city"></td>
+            <td><input type="text" id="new-ticket-sold"></td>
+            <td> <button class="add" onclick="add_match_Row();" value="
+                Add Row">Add</button>
+                <div id="match-error-msg-holder">
+                    <p id="match-error-msg">Incomplete Data</p>
+                </div>
+            </td>
+
+
+
+        </tr>
+        </tr>
+    </table>
 
 
     <h2>Announcements</h2>
     <button class="btn" onclick="openAnnouncementModal()">Post Announcement</button>
 
-	<footer>
-		<p>&copy; FIFA - 2023 World Cup Management</p>
-	</footer>
+    <footer>
+        <p>&copy; FIFA - 2023 World Cup Management</p>
+    </footer>
 
     <!-- Announcement Modal -->
     <div id="announcement-modal" class="modal">
         <div class="modal-content">
-        <span class="close" onclick="closeAnnouncementModal()">&times;</span>
-        <h2>Create a New Announcement</h2>
-        <form>
-            <label for="announcement-title">Title:</label>
-            <input type="text" id="announcement-title" name="announcement-title">
-            <label for="announcement-content">Content:</label>
-            <textarea id="announcement-content" name="announcement-content"></textarea>
-            <button type="submit" class="btn">Create Announcement</button>
-        </form>
+            <span class="close" onclick="closeAnnouncementModal()">&times;</span>
+            <h2>Create a New Announcement</h2>
+            <form>
+                <label for="announcement-title">Title:</label>
+                <input type="text" id="announcement-title" name="announcement-title">
+                <label for="announcement-content">Content:</label>
+                <textarea id="announcement-content" name="announcement-content"></textarea>
+                <button type="submit" class="btn">Create Announcement</button>
+            </form>
         </div>
     </div>
     <script src="./scripts/admin-page.js"></script>
 </body>
+
 </html>

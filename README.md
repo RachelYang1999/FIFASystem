@@ -1,14 +1,14 @@
 <h1 align="center">NLW Copa</h1>
 
 <p align="center">
-Projeto realizado durante a trilha Explorer do evento NLW Copa da Rocketseat onde durante o evento foi feito um projeto mais simples, porém modifiquei algumas coisas e adicionei todos os jogos da Copa do Mundo de 2022.
+The project was developed for the games of the 2022 World Cup tournament. 
 </p>
 
 <p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
+  <a href="#memo-licença">License</a>
 </p>
 
 <p align="center">
@@ -21,26 +21,24 @@ Projeto realizado durante a trilha Explorer do evento NLW Copa da Rocketseat ond
   <img alt="Calendário da Copa" src=".github/preview.png" width="100%">
 </p>
 
-## 🚀 Tecnologias
+## 🚀 Technologies
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+This project was developed with the following technologies:
 
-- HTML e CSS
+- HTML/CSS
 - JavaScript
-- Git e Github
+- Git/Github
 
-## 💻 Projeto
+## 💻 Project
 
-O Calendário da Copa é um projeto que lista os jogos da Copa do Mundo de 2022.
+The Cup Calendar is a project that lists the games of the 2022 World Cup.
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/community/file/1169028052212317700). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
+You can view the layout of the project through [DESSE LINK](https://www.figma.com/community/file/1169028052212317700). You need to contact [Figma](https://figma.com) to access it.
 
-## :memo: Licença
+## License
 
-Esse projeto está sob a licença MIT.
+This project is under the MIT license.
 
 ---
-
-Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discord.gg/rocketseat)
