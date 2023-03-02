@@ -107,7 +107,9 @@ function add_match_Row() {
   var new_ticket_sold = document.getElementById("new_ticket_sold").value;
   var new_tournament_match = document.getElementById("new_tournament_match").value;
 
-  if (new_team1 && new_team1_score && new_team2 && new_team2_score &&  new_date && new_city && new_ticket_sold && new_tournament_match) {
+  if (new_team1 && new_team1_score && new_team2 && new_team2_score &&  new_date && new_city && new_ticket_sold && new_tournament_match && (new_team1 === "Brazil" || new_team1 === "Germany")
+      && (new_team2 === "Brazil" || new_team2 === "Germany") && (new_tournament_match === "World Cup 2014" || new_tournament_match === "World Cup 2018") && (new_team1 !== new_team2)
+      && (parseInt(new_team1_score) >= 0) && (parseInt(new_team2_score) >= 0)) {
     var table = document.getElementById("match_table");
     var table_len = (table.rows.length) - 1;
     var Edit = 'Edit'
