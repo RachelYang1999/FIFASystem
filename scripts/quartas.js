@@ -17,17 +17,20 @@ function createGame(player1, hour, player2) {
 }
 
 let delay = -0.15
-function createCard(date, day, games, finished) {
+function createCard(date, day, time, games, finished, city, temperature, ticket) {
   delay = delay + 0.15
   return `
     <div class="card" style="animation-delay: ${delay}s">
-      <h2>${date} <span>${day}</span></h2>
+      <h2>${date} <span>${day}</span> <span>${time}</span></h2>
       <div class="finalizado">
         <h3>${finished}</h3>
       </div>
       <ul>
         ${games}
       </ul>
+      <h2>City: <span>${city}</span> </h2>
+      <h2>Temperature: <span>${temperature}</span> </h2>
+      <h2>Tickets Sold: <span>${ticket}</span> </h2>
     </div>
   `
 }
@@ -36,14 +39,40 @@ document.querySelector("#cards").innerHTML =
   createCard(
     "09/12",
     "friday",
-    createGame("Croatia", "1 <strong style='font-size: 20px'>(4 x 2)</strong> 1", "Brazil") +
-      createGame("Netherlands", "2 <strong style='font-size: 20px'>(3 x 4)</strong> 2", "argentina"),
-    "results"
+    "17:00",
+    createGame("Croatia", "1 <strong style='font-size: 20px'>(4 x 2)</strong> 1", "Brazil") ,
+    "results",
+      "Lusail",
+      "73°F",
+      "8336"
   ) +
+    createCard(
+        "09/12",
+        "friday",
+        "20:00",
+        createGame("Netherlands", "2 <strong style='font-size: 20px'>(3 x 4)</strong> 2", "argentina"),
+        "results",
+        "Education City",
+        "73°F",
+        "7190"
+    ) +
   createCard(
     "10/12",
     "Saturday",
-    createGame("Marroco", "1 x 0", "portugal") +
-      createGame("England", "1 x 2", "France"),
-    "results"
-  )
+    "17:00",
+    createGame("Marroco", "1 x 0", "portugal"),
+    "results",
+      "Al Bayt",
+      "75°F",
+      "10738"
+  ) +
+    createCard(
+        "10/12",
+        "Saturday",
+        "20:00",
+        createGame("England", "1 x 2", "France"),
+        "results",
+        "Al Thumama",
+        "75°F",
+        "8888"
+    )
