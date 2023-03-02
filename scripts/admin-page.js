@@ -27,6 +27,9 @@ window.onclick = function (event) {
 const tourErrorMsg = document.getElementById("tournament-error-msg");
 const teamErrorMsg = document.getElementById("team-error-msg");
 const matchErrorMsg = document.getElementById("match-error-msg");
+const matchR1ErrorMsg = document.getElementById("match-r1-error-msg");
+const matchR2ErrorMsg = document.getElementById("match-r2-error-msg");
+
 
 function add_TRow() {
   var new_name = document.getElementById("new-tournament-name").value;
@@ -256,6 +259,11 @@ function save_match_row(no) {
   var new_ticket_sold = document.getElementById("ticket_text" + no).value;
   var new_tournament_match = document.getElementById("tournament_match_text" + no).value;
 
+
+  if (new_team1_val && new_team1_score_val && new_team2 && new_team2_score &&  new_date && new_city && new_ticket_sold && new_tournament_match && (new_team1_val === "Brazil" || new_team1_val === "Germany")
+      && (new_team2 === "Brazil" || new_team2 === "Germany") && (new_tournament_match === "World Cup 2014" || new_tournament_match === "World Cup 2018") && (new_team1_val !== new_team2)
+      && (parseInt(new_team1_score_val) >= 0) && (parseInt(new_team2_score) >= 0)) {
+    matchErrorMsg.style.opacity = 0;
   document.getElementById("team1_row" + no).innerHTML = new_team1_val;
   document.getElementById("score1_row" + no).innerHTML = new_team1_score_val;
   document.getElementById("team2_row" + no).innerHTML = new_team2;
@@ -271,4 +279,7 @@ function save_match_row(no) {
 
   document.getElementById("edit_match_button" + no).style.display = "block";
   document.getElementById("save_match_button" + no).style.display = "none";
+}else{
+    matchErrorMsg.style.opacity = 1;
+  }
 }
