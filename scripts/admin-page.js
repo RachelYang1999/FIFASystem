@@ -213,6 +213,7 @@ function edit_match_row(no) {
   var new_date = document.getElementById("date_row"+ no);
   var new_city = document.getElementById("city_row"+ no);
   var new_ticket_sold = document.getElementById("ticket_row"+ no);
+  var new_tournament_match = document.getElementById("tournament_match_row"+ no);
 
   var new_team1_data = new_team1.innerHTML;
   var new_team1_score_data = new_team1_score.innerHTML;
@@ -222,6 +223,7 @@ function edit_match_row(no) {
   var new_date_data = new_date.innerHTML;
   var new_city_data = new_city.innerHTML;
   var new_ticket_sold_data = new_ticket_sold.innerHTML;
+  var new_tournament_match_data = new_tournament_match.innerHTML;
 
 
   new_team1.innerHTML = "<input type='text' id='team1_name_text" + no + "' value='" + new_team1_data + "'>";
@@ -233,6 +235,7 @@ function edit_match_row(no) {
   new_date.innerHTML = "<input type='date' id='date_text" + no + "' value='" + new_date_data + "'>";
   new_city.innerHTML = "<input type='text' id='city_text" + no + "' value='" + new_city_data + "'>";
   new_ticket_sold.innerHTML = "<input type='text' id='ticket_text" + no + "' value='" + new_ticket_sold_data + "'>";
+  new_tournament_match.innerHTML = "<input type='text' id='toutnament_match_text" + no + "' value='" + new_tournament_match_data + "'>";
 
 }
 
