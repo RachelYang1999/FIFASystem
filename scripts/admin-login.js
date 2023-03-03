@@ -11,7 +11,9 @@ loginButton.addEventListener("click", (e) => {
         // alert("You have successfully logged in.");
         // location.reload();
         location.href='admin-page.html';
-    } else {
+    } else if(username === "operator" && password === "666666"){
+        location.href='operator-page.html';
+    }else {
         loginErrorMsg.style.opacity = 1;
     }
 })
