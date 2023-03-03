@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>World Cup Operator Panel</title>
+	<link rel="stylesheet" href="admin-page.css">
+	<!-- <script defer src="./scripts/admin-login.js"></script> -->
+</head>
+
+<body>
+	<header>
+		<h1>World Cup Operator Panel</h1>
+	</header>
+
+
+
+	<div id="match-error-msg-holder">
+		<p id="match-error-msg">Incomplete/Invalid Data</p>
+	</div>
+
+	<h2>Matches</h2>
+	<table id="match_table">
+		<tr>
+			<th>Team 1 Name</th>
+			<th>Team 1 Score</th>
+			<th>Team 2 Name</th>
+			<th>Team 2 Score</th>
+			<th>Date</th>
+			<th>City</th>
+			<th>Ticket Sold</th>
+			<th>Tournament</th>
+			<th>Actions</th>
+
+		</tr>
+		<!-- Display all existing teams and their data -->
+		<tr id="row1">
+			<td id="team1_row1">Hazardous</td>
+			<td id="score1_row1">1</td>
+			<td id="team2_row1">Dream Killers</td>
+			<td id="score2_row1">2</td>
+
+			<td id="date_row1">13 July 2014</td>
+			<td id="city_row1">Al Rayyan</td>
+			<td id="ticket_row1">200</td>
+			<td id="tournament_match_row1">World Cup 2014</td>
+			<td>
+				<button class="edit" id="edit_match_button1" onclick="edit_match_row_op('1')"> Edit </button>
+				<button class="save" id="save_match_button1" onclick="save_match_row_op('1')">Save</button>
+
+
+			</td>
+		</tr>
+
+		<tr id="row2">
+			<td id="team1_row2">Not Got A Kalou</td>
+			<td id="score1_row2">2</td>
+			<td id="team2_row2">
+				Raising Kane</td>
+			<td id="score2_row2">1</td>
+
+			<td id="date_row2">13 July 2014</td>
+			<td id="city_row2">Al Rayyan</td>
+			<td id="ticket_row2">200</td>
+			<td id="tournament_match_row2">World Cup 2018</td>
+
+			<td>
+				<button class="edit" id="edit_match_button2" onclick="edit_match_row_op('2')"> Edit </button>
+				<button class="save" id="save_match_button2" onclick="save_match_row_op('2')">Save</button>
+			</td>
+		</tr>
+
+		<tr>
+			<!-- Add new matches -->
+		</tr>
+	</table>
+
+
+
+	<script src="./scripts/admin-page.js"></script>
+</body>
+
+</html>

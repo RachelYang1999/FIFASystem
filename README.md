@@ -1,4 +1,4 @@
-<h1 align="center">NLW Copa</h1>
+<h1 align="center">World Cup Tounament Application</h1>
 
 <p align="center">
 The project was developed for the games of the 2022 World Cup tournament. 
@@ -17,9 +17,6 @@ The project was developed for the games of the 2022 World Cup tournament.
 
 <br>
 
-<p align="center">
-  <img alt="Calendário da Copa" src=".github/preview.png" width="100%">
-</p>
 
 ## 🚀 Technologies
 

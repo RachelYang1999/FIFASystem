@@ -247,6 +247,25 @@ function edit_match_row(no) {
 
 }
 
+function edit_match_row_op(no) {
+  document.getElementById("edit_match_button" + no).style.display = "none";
+  document.getElementById("save_match_button" + no).style.display = "block";
+
+  var new_team1_score = document.getElementById("score1_row"+ no);
+  var new_team2_score = document.getElementById("score2_row"+ no);
+
+
+  var new_team1_score_data = new_team1_score.innerHTML;
+  var new_team2_score_data = new_team2_score.innerHTML;
+
+  new_team1_score.innerHTML = "<input type='text' id='team1_score_text" + no + "' value='" + new_team1_score_data + "'>";
+  new_team2_score.innerHTML = "<input type='text' id='team2-score-text" + no + "' value='" + new_team2_score_data + "'>";
+
+  //new_team_winner.innerHTML = "<select id='new_winner_text'> <option value='team1'>Team1</option> <option value='team2'>Team2</option> </select>";
+
+
+}
+
 function save_match_row(no) {
   console.log("saving match row")
   var new_team1_val = document.getElementById("team1_name_text" + no).value;
@@ -280,6 +299,24 @@ function save_match_row(no) {
   document.getElementById("edit_match_button" + no).style.display = "block";
   document.getElementById("save_match_button" + no).style.display = "none";
 }else{
+    matchErrorMsg.style.opacity = 1;
+  }
+}
+
+function save_match_row_op(no) {
+  var new_team1_score_val = document.getElementById("team1_score_text" + no).value;
+  var new_team2_score = document.getElementById("team2-score-text" + no).value;
+
+
+  if (new_team1_score_val && new_team2_score && (parseInt(new_team1_score_val) >= 0) && (parseInt(new_team2_score) >= 0)) {
+    matchErrorMsg.style.opacity = 0;
+    document.getElementById("score1_row" + no).innerHTML = new_team1_score_val;
+    document.getElementById("score2_row" + no).innerHTML = new_team2_score;
+
+
+    document.getElementById("edit_match_button" + no).style.display = "block";
+    document.getElementById("save_match_button" + no).style.display = "none";
+  }else{
     matchErrorMsg.style.opacity = 1;
   }
 }
