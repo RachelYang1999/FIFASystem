@@ -32,7 +32,7 @@
 			<td>14 June 2018</td>
 			<td>15 July 2018</td>
 			<td>France</td>
-			<td>France, Germany, Brazil...</td>
+			<td>Germany, Brazil</td>
 			<td>
 				<button>Edit</button>
 				<button class="delete" onclick="delete_tournamant_row('1')">Delete</button>
@@ -43,7 +43,7 @@
 			<td>12 June 2014</td>
 			<td>13 July 2014</td>
 			<td>Germany</td>
-			<td>France, Germany, Brazil...</td>
+			<td>Germany, Brazil</td>
 			<td>
 				<button>Edit</button>
 				<button class="delete" onclick="delete_tournamant_row('2')">Delete</button>
@@ -54,12 +54,21 @@
 			<td><input type="text" id="new-tournament-name"></td>
 			<td><input type="date" id="new-tournament-start-date"></td>
 			<td><input type="date" id="new-tournament-end-date"></td>
-			<td><input type="text" id="new-tournament-winner"></td>
-			<td><input type="text" id="new-tournament-team"></td>
+			<td id="new-tournament-winner"></td>
+			<td id="new-tournament-team" ></td>
+			<script>
+				window.onload = function() {
+					createTeamRadios("new-tournament-winner" );
+					createTeamCheckboxes("new-tournament-team" );
+				};
+			</script>
 			<td>
 				<button class="add" onclick="add_TRow()">Add</button>
 				<div id="tournament-error-msg-holder">
 					<p id="tournament-error-msg">Incomplete Data</p>
+				</div>
+				<div id="time-error-msg-holder">
+					<p id="time-error-msg">Invalid time</p>
 				</div>
 			</td>
 		</tr>

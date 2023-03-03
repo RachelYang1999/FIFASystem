@@ -25,23 +25,127 @@ window.onclick = function (event) {
 }
 
 const tourErrorMsg = document.getElementById("tournament-error-msg");
+const timeErrorMsg = document.getElementById("time-error-msg");
 const teamErrorMsg = document.getElementById("team-error-msg");
 const matchErrorMsg = document.getElementById("match-error-msg");
 const matchR1ErrorMsg = document.getElementById("match-r1-error-msg");
 const matchR2ErrorMsg = document.getElementById("match-r2-error-msg");
+
+function createTeamCheckboxes(containerId) {
+  const checkboxContainer = document.getElementById(containerId);
+  const data_table = document.getElementById("data_table");
+
+  if (!data_table) {
+    console.error("Error: data_table element not found");
+    return;
+  }
+
+  // Clear any existing content in the target element
+  checkboxContainer.innerHTML = "";
+  // Loop through each row in the table, skipping the header row
+  for (let i = 1; i < data_table.rows.length; i++) {
+    const name_row = data_table.rows[i].querySelector("#name_row" + i);
+
+    if (!name_row) {
+      console.error(`Error: name_row${i} element not found`);
+      continue;
+    }
+
+    const teamName = name_row.textContent;
+    // Create a new checkbox element for the checkbox container
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.name = "teamName";
+    checkbox.value = teamName;
+
+    // Create a new label element for the checkbox
+    const label = document.createElement("label");
+    label.appendChild(document.createTextNode(teamName));
+
+    // Add the checkbox and label elements to the checkbox container
+    checkboxContainer.appendChild(checkbox);
+    checkboxContainer.appendChild(label);
+  }
+}
+
+function createTeamRadios(targetElementId) {
+  const select = document.getElementById(targetElementId);
+  const data_table = document.getElementById("data_table");
+
+  if (!data_table) {
+    console.error("Error: data_table element not found");
+    return;
+  }
+
+  // Clear any existing content in the target element
+  select.innerHTML = "";
+  // Loop through each row in the table, skipping the header row
+  for (let i = 1; i < data_table.rows.length; i++) {
+    const name_row = data_table.rows[i].querySelector("#name_row" + i);
+
+    if (!name_row) {
+      console.error(`Error: name_row${i} element not found`);
+      continue;
+    }
+
+    const teamName = name_row.textContent;
+    
+    // Create a new radio button element for the select element
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "winner";
+    radio.value = teamName;
+    
+    // Create a new label element for the radio button
+    const label = document.createElement("label");
+    label.appendChild(document.createTextNode(teamName));
+    
+    // Add the radio button and label elements to the select element
+    select.appendChild(radio);
+    select.appendChild(label);
+  }
+}
+
 
 
 function add_TRow() {
   var new_name = document.getElementById("new-tournament-name").value;
   var new_start_date = document.getElementById("new-tournament-start-date").value;
   var new_end_date = document.getElementById("new-tournament-end-date").value;
-  var new_winner = document.getElementById("new-tournament-winner").value;
-  var new_team = document.getElementById("new-tournament-team").value;
+  // var new_winner = document.getElementById("new-tournament-winner").value;
+  // var new_team = document.getElementById("new-tournament-team").value;
+  var new_winner = "";
+  var new_team = [];
+
+  var winnerRadios = document.getElementsByName("winner");
+  for (var i = 0; i < winnerRadios.length; i++) {
+    var radio = winnerRadios[i];
+    if (radio.checked) {
+      new_winner = radio.value;
+      break; // exit loop after finding first checked radio button
+    }
+  }
+
+
+  console.log(new_winner);
+  var teamCheckboxes = document.getElementsByName("teamName");
+  for (var i = 0; i < teamCheckboxes.length; i++) {
+    var checkbox = teamCheckboxes[i];
+    if (checkbox.checked) {
+      new_team.push(checkbox.value);
+    }
+  }
+
+  console.log(new_team);
+
 
   if (new_name && new_start_date && new_end_date && new_winner && new_team) {
+    if(new_start_date > new_end_date){
+      timeErrorMsg.style.opacity = 1;
+      return;
+    }
     var table = document.getElementById("tournament-table");
     var table_len = (table.rows.length) - 1;
-    var Edit = 'Edit'
 
     // Insert a new row at the second last position
     let row = table.insertRow(table_len);
@@ -59,17 +163,24 @@ function add_TRow() {
     cell2.innerHTML = new_start_date;
     cell3.innerHTML = new_end_date;
     cell4.innerHTML = new_winner;
-    cell5.innerHTML = new_team;
+    cell5.innerHTML = new_team.join(", ");
     cell6.innerHTML = '<button class="edit">Edit</button><button class="delete" onclick="delete_tournamant_row(' + table_len + ')">Delete</button>';
 
     // deleteButton.setAttribute("onclick", "delete_tournamant_row('"+table_len+"')");
 
-    document.getElementById("new-team-name").value = "";
+    document.getElementById("new-tournament-name").value = "";
     document.getElementById("new-tournament-start-date").value = "";
     document.getElementById("new-tournament-end-date").value = "";
     document.getElementById("new-tournament-winner").value = "";
     document.getElementById("new-tournament-team").value = "";
+    document.querySelector('input[name="winner"]:checked').checked = false;
+    document.querySelectorAll('input[name="teamName"]:checked').forEach(checkbox => checkbox.checked = false);
+
+    
+    timeErrorMsg.style.opacity = 0;
+    tourErrorMsg.style.opacity = 0;
   } else {
+    timeErrorMsg.style.opacity = 0;
     tourErrorMsg.style.opacity = 1;
   }
 
@@ -88,6 +199,9 @@ function add_Row() {
     var Edit = 'Edit'
     var row = table.insertRow(table_len).outerHTML = "<tr id='row" + table_len + "'><td id='name_row" + table_len + "'>" + new_name + "</td><td id='country_row" + table_len + "'>" + new_nation + "</td><td id='member_row" + table_len + "'>" + new_member + "</td><td id='tournament_row" + table_len + "'>" + new_tournament + "</td> <td><button class='edit' id='edit_button" + table_len + "' onclick='edit_row(" + table_len + ")'>" + Edit + "</button>  <button class='delete' id='delete_button" + table_len + "' onclick='delete_row(" + table_len + ")'>Delete</button>  </td></tr>";
 
+
+    createTeamRadios("new-tournament-winner" );
+    createTeamCheckboxes("new-tournament-team" );
     document.getElementById("new-team-name").value = "";
     document.getElementById("new-team-nation").value = "";
     document.getElementById("new-team-member").value = "";
@@ -97,6 +211,8 @@ function add_Row() {
   }
 
 }
+
+
 
 function add_match_Row() {
   console.log("add match row");
